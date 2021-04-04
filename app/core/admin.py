@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext
 
-from .models import User
+from .models import User, Tag
 
 
 @admin.register(User)
@@ -23,5 +23,7 @@ class UserAdmin(UserAdmin):
 			'fields': ('email', 'password1', 'password2')
 		}),
 	)
+
+admin.site.register(Tag)
 
 # admin.site.register(User, UserAdmin)
