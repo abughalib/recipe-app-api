@@ -7,22 +7,23 @@ from .models import User, Tag
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
-	ordering = ['id']
-	list_display = ['email', 'name']
-	fieldsets = (
-		(None, {'fields': ('email', 'password')}),
-		(gettext('Personal Info'), {'fields': ('name',)}),
-		(
-			gettext('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}
-		),
-		(gettext('Important Dates'), {'fields': ('last_login',)})
-	)
-	add_fieldsets = (
-		(None, {
-			'classes': ('wide',),
-			'fields': ('email', 'password1', 'password2')
-		}),
-	)
+    ordering = ['id']
+    list_display = ['email', 'name']
+    fieldsets = (
+        (None, {'fields': ('email', 'password')}),
+        (gettext('Personal Info'), {'fields': ('name',)}),
+        (
+            gettext('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}
+        ),
+        (gettext('Important Dates'), {'fields': ('last_login',)})
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')
+        }),
+    )
+
 
 admin.site.register(Tag)
 
